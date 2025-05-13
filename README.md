@@ -43,3 +43,12 @@ docker compose down
 ```
 docker compose up -d
 ```
+# Akses Sepolia,Endpoint RPC HTTP & Beacon Sepolia
+Sepolia RPC
+```
+http://IP_VPS:8545
+```
+Beacon Sepolia RPC
+```
+http://IP_VPS:5052
+```
