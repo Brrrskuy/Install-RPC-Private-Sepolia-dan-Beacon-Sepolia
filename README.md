@@ -26,3 +26,20 @@ Cek Lighthouse status
 ```
 curl http://<IP-ANDA>:5052/eth/v1/node/health
 ```
+# Check Logs 
+```
+docker compose logs -f geth
+```
+```
+docker compose logs -f lighthouse
+```
+# Maintenance dan Update
+```
+docker compose pull
+```
+```
+docker compose down
+```
+```
+docker compose up -d
+```
