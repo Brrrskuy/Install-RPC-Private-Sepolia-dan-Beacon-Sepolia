@@ -97,17 +97,19 @@ sudo ufw delete allow 5052/tcp
 # Buka Akses untuk IP Tertentu
 ```
 # Geth HTTP RPC
-sudo ufw allow from 64.227.xxx.xxx to any port 8545 proto tcp
-sudo ufw allow from 143.198.xxx.xxx to any port 8545 proto tcp
+sudo ufw allow from YOUR.IP.xxx.xxx to any port 8545 proto tcp
+sudo ufw allow from YOUR.IP.xxx.xxx to any port 8545 proto tcp
 
 # Geth WebSocket (optional)
-sudo ufw allow from 64.227.xxx.xxx to any port 8546 proto tcp
-sudo ufw allow from 143.198.xxx.xxx to any port 8546 proto tcp
+sudo ufw allow from YOUR.IP.xxx.xxx to any port 8546 proto tcp
+sudo ufw allow from YOUR.IP.xxx.xxx to any port 8546 proto tcp
 
 # Lighthouse Beacon API
-sudo ufw allow from 64.227.xxx.xxx to any port 5052 proto tcp
-sudo ufw allow from 143.198.xxx.xxx to any port 5052 proto tcp
+sudo ufw allow from YOUR.IP.xxx.xxx to any port 5052 proto tcp
+sudo ufw allow from YOUR.IP.xxx.xxx to any port 5052 proto tcp
 ```
+`Ubah Dengan IP mu`
+
 # Check UFW Status
 ```
 sudo ufw status numbered
