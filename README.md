@@ -52,3 +52,40 @@ Beacon Sepolia RPC
 ```
 http://IP_VPS:5052
 ```
+# Jika ingin Private RPC tidak untuk Public
+Hapus port Public
+```
+sudo ufw delete allow 8545/tcp
+sudo ufw delete allow 8546/tcp
+sudo ufw delete allow 8551/tcp
+sudo ufw delete allow 5052/tcp
+sudo ufw delete allow 8545/tcp
+sudo ufw delete allow 8546/tcp
+sudo ufw delete allow 8551/tcp
+sudo ufw delete allow 5052/tcp
+```
+# Buka Akses untuk IP Tertentu
+```
+# Geth HTTP RPC
+sudo ufw allow from 64.227.xxx.xxx to any port 8545 proto tcp
+sudo ufw allow from 143.198.xxx.xxx to any port 8545 proto tcp
+
+# Geth WebSocket (optional)
+sudo ufw allow from 64.227.xxx.xxx to any port 8546 proto tcp
+sudo ufw allow from 143.198.xxx.xxx to any port 8546 proto tcp
+
+# Lighthouse Beacon API
+sudo ufw allow from 64.227.xxx.xxx to any port 5052 proto tcp
+sudo ufw allow from 143.198.xxx.xxx to any port 5052 proto tcp
+```
+# Check ulang UFW 
+```
+sudo ufw status numbered
+```
+# Check lewat IP Waitlist
+```
+curl http://<IP>:8545
+```
+```
+curl http://<IP>:5052
+```
