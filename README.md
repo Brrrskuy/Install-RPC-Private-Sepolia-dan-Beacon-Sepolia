@@ -34,6 +34,10 @@ sudo ufw allow 30303/udp     # Geth P2P
 sudo ufw allow 9000/tcp      # Lighthouse P2P
 sudo ufw allow 9000/udp      # Lighthouse P2P
 ```
+**Reload UFW**
+```
+sudo ufw reload
+```
 # Cara Cek Sinkronisasi & Status
 **Cek versi client**
 ```
