@@ -14,7 +14,7 @@
 
 # First time Git Clone my repo
 ```
-https://github.com/Brrrskuy/Install-RPC-Private-Sepolia-dan-Beacon-Sepolia.git
+https://github.com/Brrrskuy/RPC-Sepolia-Beacon-Private.git
 ```
 # One Click Command
 ```
