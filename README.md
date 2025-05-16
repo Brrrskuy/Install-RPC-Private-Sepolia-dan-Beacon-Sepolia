@@ -135,7 +135,7 @@ curl http://<IP>:5052
 Jangan lupa untuk batasi UFW terlebih dahulu
 ```
 sudo ufw deny 8545/tcp
-sudo ufw deny 3500/tcp
+sudo ufw deny 5022/tcp
 ```
 Buat file daemon.json
 ```
