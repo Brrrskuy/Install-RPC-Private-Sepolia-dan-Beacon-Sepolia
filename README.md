@@ -10,7 +10,7 @@
 
 `This make snap sync not full sync , maybe 6-12 hours normaly to running until success`
 
-`Buy VPS Storage Capity in Contabo maybe`
+`Buy VPS Storage Capity in Contabo maybe ,more 1TB+ Lebih baik`
 
 # First time Git Clone my repo
 ```
@@ -50,6 +50,15 @@ curl -X POST http://IP-ANDA:8545 \
 curl -X POST http://IP-ANDA:8545 \
   -H "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'
+```
+```
+curl -X POST http://161.97.67.172:8545 \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'
+```
+Jika Result seperti ini berarti Sync mode sudah aktif dan RPC Siap digunakan
+```
+{"jsonrpc":"2.0","id":1,"result":false}
 ```
 **Cek Lighthouse status**
 ```
@@ -120,4 +129,42 @@ curl http://<IP>:8545
 ```
 ```
 curl http://<IP>:5052
+```
+# Jika mau block selain IP Waitlist yang kamu buat
+
+Jangan lupa untuk batasi UFW terlebih dahulu
+```
+sudo ufw deny 8545/tcp
+sudo ufw deny 3500/tcp
+```
+Buat file daemon.json
+```
+sudo nano /etc/docker/daemon.json
+```
+Isi dengan ini , kalau sudah `CTRL+X+S` Untuk Save
+```
+{
+  "iptables": false
+}
+```
+Setelah itu Restart UFW
+```
+sudo systemctl restart docker
+sudo ufw disable && sudo ufw enable
+```
+# Test Telnet di VPS Lain tidak waitlist
+```
+telnet 128.392.xxx.xxx 8545
+```
+`Ganti 128.392.xxx.xxx Pakai IP VPSmu`
+
+**Jika Berhasil**
+```
+Trying 128.xxx.xxx.xxx
+Connected to 128.xxx.xxx.xxx
+```
+**Jika Gagal**
+```
+Trying 128.xxx.xxx.xxx
+telnet: Unable to connect to remote host: Connection refused
 ```
