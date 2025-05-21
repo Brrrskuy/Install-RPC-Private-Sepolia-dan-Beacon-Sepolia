@@ -48,6 +48,7 @@ services:
       - --sepolia
       - --http
       - --http.addr=0.0.0.0
+      - --http.port=8545
       - --http.api=eth,net,web3,debug,admin,engine
       - --http.corsdomain=*
       - --http.vhosts=*
@@ -63,10 +64,10 @@ services:
       - --syncmode=snap
       - --state.scheme=hash
     ports:
-      - 8545:8545
-      - 8546:8546
-      - 8551:8551
-      - 30303:30303/tcp
+      - 8545:8545  # HTTP RPC
+      - 8546:8546  # WebSocket
+      - 8551:8551  # Auth RPC
+      - 30303:30303/tcp  # P2P
       - 30303:30303/udp
     volumes:
       - ./geth-data:/data
@@ -84,14 +85,17 @@ services:
       - --checkpoint-sync-url=https://sepolia.checkpoint-sync.ethpandaops.io
       - --http
       - --http-address=0.0.0.0
+      - --http-port=5052
       - --metrics
       - --metrics-address=0.0.0.0
+      - --metrics-port=5054
       - --disable-enr-auto-update
     depends_on:
       - geth
     ports:
-      - 5052:5052
-      - 9000:9000/tcp
+      - 5052:5052  # Beacon HTTP API
+      - 5054:5054  # Metrics
+      - 9000:9000/tcp  # P2P
       - 9000:9000/udp
     volumes:
       - ./lighthouse-data:/root/.lighthouse
