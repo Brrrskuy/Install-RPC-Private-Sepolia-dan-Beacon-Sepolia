@@ -123,6 +123,10 @@ sudo ufw allow from YOUR.IP.xxx.xxx to any port 5052 proto tcp
 ```
 sudo ufw status numbered
 ```
+Untuk hapus ufw (ganti nomor `00`)
+```
+sudo ufw delete 00
+```
 # Check lewat IP Waitlist
 ```
 curl http://<IP>:8545
